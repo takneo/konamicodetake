@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
+:root {
+    --bg: #b2b2be;
+    --controles: #9492a0;
+    --boton-oscuro: #323335;
+    --xy: #a8a9ec;
+    --xy-hl: #ebeeff;
+    --ab: #4c3f8f;
+    --ab-hl: #d6d1ef;
+    --border-color: #8b8a8f;
+    --text-color: #8d8b98;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to right, black, #362737, black); 
+}
+
+h2, h3, h4 {
+    font-family: 'Open Sans', cursive;
+}
+
+button {
+    cursor: pointer;
+}
+
+h2 {
+    
+    text-transform: uppercase;
+    margin: 10px 10px;
+    color: var(--text-color)
+}
+h1 {
+    font-family: 'Audiowide', cursive;
+    margin: 10px 10px;
+    color: aliceblue;
+    text-align: center;
+    font-size: 3em;
+    -webkit-text-stroke: 0.1px #ed2121;
+  text-shadow: -3px 3px 0px #ed2121;
+}
+
+h3, h4 {
+    text-transform: uppercase;
+}
+
+h3 {
+    color: var(--text-color);
+}
+
+h4 {
+    font-size: 8px;
+    color: white;
+    background-color: var(--text-color);
+}
+
+.control {
+    width: 600px;
+    height: 260px;
+    
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.centrado {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(-50%,  -50%); }
+    65%  { transform: translate(-50%, -55%); }
+    to   { transform: translate(-50%, -50%); }    
+}
+
+.mangoizq, .mangoder {
+    background-color: var(--bg);
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+}
+
+
+.mangoizq {
+    border-left: 2px solid var(--border-color);
+    box-shadow: inset 9px 0px 20px -15px #000000;
+}
+
+.mangoder {
+    right: 0;
+    border-right: 2px solid var(--border-color);
+    box-shadow: inset -9px 0px 20px -15px #000000;
+}
+
+.botones {
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0 3px var(--border-color);
+    box-shadow: 0 3px 6px rgba(#000, .16),
+    0 3px 6px rgba(#000, .23) ;
+}
+
+.cuerpo {
+    background-color: var(--bg);
+    text-align: center;
+    width: 300px;
+    height: 227px;
+    position: absolute;
+    top: 1px;
+    left: 25%;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+    line-height: 1em;
+    z-index: 8;
+    box-shadow: inset 0px 9px 20px -15px #000000;
+}
+
+.mangoder .botones {
+    background-color: var(--controles);
+    width: 230px;
+    height: 230px;
+    top: 10px;
+    right: 10px;
+}
+
+.mangoizq .botones {
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    left: 50px;
+}
+
+.mangoizq .botones>button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: var(--boton-oscuro);
+    border: none;
+}
+
+.mangoizq .botones button.top {
+    left: 50%;
+    margin-left: -16px;
+    top: 38px;
+    border-top: 2px solid white;
+}
+
+.mangoizq .botones button.right {
+    top: 50%;
+    margin-top: -16px;
+    right: 38px;
+    width: 40px;
+    border-top: 2px solid white;
+}
+
+.mangoizq .botones button.bottom {
+left: 50%;
+ margin-left: -16px;
+ bottom: 38px;
+}
+
+.mangoizq .botones button.left {
+    top: 50%;
+    margin-top: -16px;
+    left: 38px;
+    width: 40px;
+}
+
+.centrobtn {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    font-size: small;
+}
+
+.cuerpo button {
+    width: 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--boton-oscuro);
+    transform: rotate(45deg);
+    margin: 10px 10px;
+    position: relative;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 2px var(--xy-hl)
+}
+
+label {
+    font-size: smaller;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.cbtnes {
+    background-color: var(--bg);
+    border: 2px solid var(--border-color);
+    transform: rotate(-45deg);
+    position:absolute;
+    display:flex;
+    padding: 5px 5px 1px;
+    top: 60px;
+    width: 100px;
+    border-radius: 100px;
+    justify-content: space-between;
+    left: 40px;
+}
+
+.mangoder .botones .grupoab {
+     bottom: 62px;
+     top: auto;
+     left: auto;
+     right: 20px;
+     display: flex;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--boton-oscuro);
+}
+
+.mangoder .botones .grupoxy {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--boton-oscuro);
+}
+
+/* Labels de botones */
+.grupoxy::before {
+    right: 120px;
+    content: "Y";
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.grupoxy::after {
+    left: 120px;
+    content: "X";
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.grupoab::before {
+    right: 120px;
+    content: "B";
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.grupoab::after {
+    left: 120px;
+    content: "A";
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.mangoder .botones button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+}
+ 
+.mangoder .botones .grupoxy button {
+    background-color: var(--xy);
+    box-shadow: inset 0 3px var(--xy-hl), 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.mangoder .botones .grupoab button {
+    background-color: var(--ab);
+    box-shadow: inset 0 3px var(--ab-hl), 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.panel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: aliceblue;
+    border-top: 1px solid var(--border-color);
+    overflow: scroll;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+    text-align: left;
+}
+
+li {
+    background-color: #d4dbe2;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.correcto {
+    color: green;
+}

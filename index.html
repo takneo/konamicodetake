@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/control.css" rel="stylesheet" type="text/css">
+    <title>KxC</title>
+</head>
+<body>
+    <!-- titulo -->
+    <h1>Konami Code</h1>
+    <!-- marco del control completo -->
+    <div class="control centrado">
+        <!-- mango izquierdo del control -->
+        <div class="mangoizq">
+            <div class="botones">
+                <button onclick="controllerKey(39)" class="right"><i></i></button>
+                <button onclick="controllerKey(38)" class="top"><i></i></button>
+                <button onclick="controllerKey(40)" class="bottom"><i></i></button>
+                <button onclick="controllerKey(37)" class="left"><i></i></button>
+            </div>
+        </div>
+
+        <!-- centro del control -->
+        <div class="cuerpo">
+            <h3>Super Nintendo</h3>
+            <h4>Entertainment System</h4>
+            <div class="centrobtn">
+            <button></button>
+            <button></button>
+            <label for="select">select</label>
+            <label for="start">start</label>
+        </div>
+        </div>
+
+        <!-- mango derecho del control -->
+        <div class="mangoder">
+            <!-- circulito gris del control -->
+            <div class="botones">
+            <div class="grupoxy cbtnes">
+                <button onclick="controllerKey(89)" class="x"></button>
+                <button onclick="controllerKey(88)" class="y"></button>
+            </div>
+
+            <div class="grupoab cbtnes">
+                <button onclick="controllerKey(66)" class="a"></button>
+                <button onclick="controllerKey(65)" class="b"></button>
+            </div>
+
+            </div>
+        </div>
+
+<!-- fin full-control -->
+    </div> 
+
+    <!-- panel inferior -->
+    <div class="panel">
+        <h2>los botones</h2>
+<ul id="registro"> 
+</ul>
+    </div>
+    <script type="application/javascript" src="KonamiCode.js"></script>
+</body>
+</html>
