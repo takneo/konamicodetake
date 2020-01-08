@@ -26,7 +26,6 @@ window.addEventListener('keyup', konamiCode);
 function konamiCode(e) {
 
 step++;
-
 if(!e.keyCode) {
     pressed.push(e);
     logControllerKey(e);
@@ -35,21 +34,26 @@ if(!e.keyCode) {
 }
   if(pressed[step] === secretCode[step]) {
     if(step === secretCode.length - 1) {
-        document.body.append( new DOMParser().parseFromString( '<iframe id="completo" src="https://www.youtube.com/embed/wOL3XQcAgsA?autoplay=1" frameborder="0" allowfullscreen autoplay; style="position:fixed; top: 0; left: 0; height: 100%; width: 100%;"></iframe>', 'text/html' ).body.firstChild);
+        activateSecret();
     }
 } else {
     step = -1;
     pressed = [];
 } 
 logKey(e);
-
 };
 
+// resultado del codigo
+function activateSecret() {
+    document.body.append( new DOMParser().parseFromString( '<iframe id="completo" src="https://www.youtube.com/embed/wOL3XQcAgsA?autoplay=1" frameborder="0" allowfullscreen autoplay; style="position:fixed; top: 0; left: 0; height: 100%; width: 100%;"></iframe>', 'text/html' ).body.firstChild);
+}
 
+// Detectar los botones en el control
 function controllerKey(key) {
 konamiCode(key);
 }
 
+// Logear la tecla apretada
 function logKey(e) {
 const ul = document.getElementById("registro");
 let li = document.createElement("li");
@@ -66,6 +70,7 @@ ul.appendChild(li);
 scroll.scrollTop = scroll.scrollHeight;
 }
 
+// logear el boton apretado
 function logControllerKey(e) {
 const ul = document.getElementById("registro");
 let li = document.createElement("li");
@@ -77,7 +82,8 @@ if (keyNames[e] === undefined) {
 } else {
 li.appendChild(document.createTextNode(`> ${keyNames[e]}`));
 };
-
 ul.appendChild(li);
 scroll.scrollTop = scroll.scrollHeight;
 }
+
+// 
